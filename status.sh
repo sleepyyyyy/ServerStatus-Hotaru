@@ -452,10 +452,10 @@ Set_ServerStatus_server() {
     Modify_ServerStatus_server_disabled
   elif [[ ${server_num} == "11" ]]; then
     Read_config_server
-    Del_iptables "${server_port}"
+#    Del_iptables "${server_port}"
     Set_server_port
     Write_server_config_conf
-    Add_iptables "${server_port_s}"
+#    Add_iptables "${server_port_s}"
   else
     echo -e "${Error} 请输入正确的数字[1-11]" && exit 1
   fi
@@ -678,9 +678,9 @@ Set_ServerStatus_client() {
   check_installed_client_status
   Set_config_client
   Read_config_client
-  Del_iptables_OUT "${client_port}"
+#  Del_iptables_OUT "${client_port}"
   Modify_config_client
-  Add_iptables_OUT "${server_port_s}"
+#  Add_iptables_OUT "${server_port_s}"
   Restart_ServerStatus_client
 }
 Install_vnStat() {
@@ -852,14 +852,14 @@ Install_ServerStatus_server() {
   echo -e "${Info} 开始写入 配置文件..."
   Write_server_config
   Write_server_config_conf
-  echo -e "${Info} 开始设置 iptables防火墙..."
-  Set_iptables
-  echo -e "${Info} 开始添加 iptables防火墙规则..."
-  Add_iptables "${server_port_s}"
-  [[ -n "${server_http_port_s}" ]] && Add_iptables "${server_http_port_s}"
-  echo -e "${Info} 开始保存 iptables防火墙规则..."
-  Save_iptables
-  echo -e "${Info} 所有步骤 安装完毕，开始启动..."
+#  echo -e "${Info} 开始设置 iptables防火墙..."
+#  Set_iptables
+#  echo -e "${Info} 开始添加 iptables防火墙规则..."
+#  Add_iptables "${server_port_s}"
+#  [[ -n "${server_http_port_s}" ]] && Add_iptables "${server_http_port_s}"
+#  echo -e "${Info} 开始保存 iptables防火墙规则..."
+#  Save_iptables
+#  echo -e "${Info} 所有步骤 安装完毕，开始启动..."
   Start_ServerStatus_server
 }
 Install_ServerStatus_client() {
@@ -887,13 +887,13 @@ Install_ServerStatus_client() {
   echo -e "${Info} 开始写入 配置..."
   Read_config_client
   Modify_config_client
-  echo -e "${Info} 开始设置 iptables防火墙..."
-  Set_iptables
-  echo -e "${Info} 开始添加 iptables防火墙规则..."
-  Add_iptables_OUT "${server_port_s}"
-  echo -e "${Info} 开始保存 iptables防火墙规则..."
-  Save_iptables
-  echo -e "${Info} 所有步骤 安装完毕，开始启动..."
+#  echo -e "${Info} 开始设置 iptables防火墙..."
+#  Set_iptables
+#  echo -e "${Info} 开始添加 iptables防火墙规则..."
+#  Add_iptables_OUT "${server_port_s}"
+#  echo -e "${Info} 开始保存 iptables防火墙规则..."
+#  Save_iptables
+#  echo -e "${Info} 所有步骤 安装完毕，开始启动..."
   Start_ServerStatus_client
 }
 Update_ServerStatus_server() {
@@ -958,8 +958,8 @@ Uninstall_ServerStatus_server() {
     check_pid_server
     [[ -n $PID ]] && kill -9 "${PID}"
     Read_config_server
-    Del_iptables "${server_port}"
-    Save_iptables
+#    Del_iptables "${server_port}"
+#    Save_iptables
     if [[ -e "${client_file}/status-client.py" ]]; then
       rm -rf "${server_file}"
       rm -rf "${web_file}"
@@ -1012,8 +1012,8 @@ Uninstall_ServerStatus_client() {
     check_pid_client
     [[ -n $PID ]] && kill -9 "${PID}"
     Read_config_client
-    Del_iptables_OUT "${client_port}"
-    Save_iptables
+#    Del_iptables_OUT "${client_port}"
+#    Save_iptables
     if [[ -e "${server_file}/sergate" ]]; then
       rm -rf "${client_file}"
     else
