@@ -2,7 +2,9 @@ body {
     font-family: "Microsoft YaHei", 微软雅黑, 'icons', serif;
     margin: 0;
     color: #616366;
+    /*    
     background: url(../img/bg_parts.png) repeat-y left top, url(../img/bg.png) repeat left top;
+    */
 }
 
 a {
@@ -130,10 +132,12 @@ table {
 }
 
 @media only screen and (min-width: 992px) {
+    /*
     .hotaru-cover {
         background: url(../img/tenshi_l.png) center no-repeat;
         background-size: 100%;
     }
+    */
 }
 
 @media only screen and (max-width: 992px) {
@@ -141,11 +145,12 @@ table {
         display: none;
         visibility: hidden;
     }
-
+    /*
     .hotaru-cover {
         background: url(../img/tenshi_l.png) center no-repeat;
         background-size: 100%;
     }
+    */
 }
 
 @media only screen and (max-width: 720px) {
@@ -163,11 +168,12 @@ table {
         display: none;
         visibility: hidden;
     }
-
+    /*
     .hotaru-cover {
         background: url(../img/tenshi.png) no-repeat;
         background-size: 100%;
     }
+    */
 }
 
 @media only screen and (max-width: 600px) {
@@ -190,11 +196,12 @@ table {
         display: none;
         visibility: hidden;
     }
-
+    /*
     .hotaru-cover {
         background: url(../img/tenshi.png) no-repeat;
         background-size: 100%;
     }
+    */
 }
 
 @media only screen and (max-width: 533px) {
@@ -222,11 +229,12 @@ table {
         display: none;
         visibility: hidden;
     }
-
+    /*
     .hotaru-cover {
         background: url(../img/tenshi.png) no-repeat;
         background-size: 100%;
     }
+    */
 
     @media only screen and (max-width: 450px) {
         body {
@@ -274,9 +282,10 @@ table {
             min-width: 20px;
             max-width: 40px;
         }
-
+        /*
         .hotaru-cover {
             background: url(../img/tenshi.png) no-repeat;
             background-size: 100%;
         }
+        */
     }
